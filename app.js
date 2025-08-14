@@ -4,9 +4,11 @@ const app=express()
 // const user = require('./models/usermodel');
 const mongoose = require('mongoose');
 mongoose.connect("mongodb://localhost:27017/admin");
+const cookieParser = require('cookie-parser')
 
 
 app.use(express.json());
+app.use(cookieParser());
 
 
 // app.post('/')
