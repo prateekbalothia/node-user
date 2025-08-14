@@ -1,0 +1,28 @@
+{
+  "name": "user",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "Admin_users"
+  ],
+  "homepage": "https://github.com/prateekbalothia/node-user#readme",
+  "bugs": {
+    "url": "https://github.com/prateekbalothia/node-user/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prateekbalothia/node-user.git"
+  },
+  "license": "ISC",
+  "author": "Prateek",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongodb": "^6.18.0",
+    "mongoose": "^8.17.1"
+  }
+}
