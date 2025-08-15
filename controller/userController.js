@@ -1,6 +1,8 @@
 const user = require('../models/usermodel');
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
+
 
 
 const getuser = async (req, res) => {
@@ -59,12 +61,13 @@ const login = async (req, res) => {
     }
     // return false
     const pass = bcrypt.compare(password, nuser.password, (error, result) => {
-        console.log(result)
+        // console.log(result)
         if (result == false) {
             res.send("Invalid email or password")
         }
         else {
             let token = jwt.sign({email},"secret")
+            res.cookie("token",token)
             let dataString = {
                 status:"successful",
                 token:token
@@ -74,7 +77,7 @@ const login = async (req, res) => {
             
         }
     });
-    // console.log(pass)
+    // console.log(req.cookie.token)
 }
 
 const jtoken = async (req,res) => {
